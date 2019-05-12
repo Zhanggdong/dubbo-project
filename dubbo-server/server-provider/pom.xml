@@ -29,7 +29,7 @@
         </dependency>
         <dependency>
             <groupId>com.vivo.dubbo.user</groupId>
-            <artifactId>server-api</artifactId>
+            <artifactId>server-facade</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
