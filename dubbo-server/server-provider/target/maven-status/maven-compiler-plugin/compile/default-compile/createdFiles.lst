@@ -1,0 +1,13 @@
+com\vivo\dubbo\user\code\Transporter$Adpative.class
+com\vivo\dubbo\user\bootstrap\Cluster2.class
+com\vivo\dubbo\user\bootstrap\Cluster1.class
+com\vivo\dubbo\user\spi\MyProtocol.class
+com\vivo\dubbo\user\bootstrap\BootstrapVerson.class
+com\vivo\dubbo\user\code\RegistryFactory$Adpative.class
+com\vivo\dubbo\user\UserServiceImpl.class
+com\vivo\dubbo\user\bootstrap\ProtocolBootstrap.class
+com\vivo\dubbo\user\bootstrap\SPIBootstrap.class
+com\vivo\dubbo\user\bootstrap\Bootstrap.class
+com\vivo\dubbo\user\code\Dubbo$Adaptive.class
+com\vivo\dubbo\user\UserServiceImpl2.class
+com\vivo\dubbo\user\code\Protocol$Adpative.class
