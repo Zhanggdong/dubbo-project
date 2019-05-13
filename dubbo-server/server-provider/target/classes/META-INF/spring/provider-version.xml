@@ -17,6 +17,6 @@
     <dubbo:service interface="com.vivo.dubbo.user.IUserService" ref="userService2" protocol="dubbo" registry="zk1" version="2.0.0"/>
 
     <!-- Dubbo发布暴露的服务接口实现 -->
-    <bean id="userService" class="com.vivo.dubbo.user.UserServiceImpl"/>
-    <bean id="userService2" class="com.vivo.dubbo.user.UserServiceImpl2"/>
+    <bean id="userService" class="com.vivo.dubbo.user.service.UserServiceImpl"/>
+    <bean id="userService2" class="com.vivo.dubbo.user.service.UserServiceImpl2"/>
 </beans>

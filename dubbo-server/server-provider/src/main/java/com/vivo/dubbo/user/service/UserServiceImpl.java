@@ -1,4 +1,6 @@
-package com.vivo.dubbo.user;
+package com.vivo.dubbo.user.service;
+
+import com.vivo.dubbo.user.IUserService;
 
 /**
  * @author zhangguidong

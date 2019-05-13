@@ -19,5 +19,5 @@
     <dubbo:service interface="com.vivo.dubbo.user.IUserService" ref="userService" protocol="hessian"/>
 
     <!-- Dubbo发布暴露的服务接口实现 -->
-    <bean id="userService" class="com.vivo.dubbo.user.UserServiceImpl"/>
+    <bean id="userService" class="com.vivo.dubbo.user.service.UserServiceImpl"/>
 </beans>

@@ -2,16 +2,32 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:application.properties" />
+
     <!-- Dubbo应用名称 -->
     <dubbo:application name="demo-provider"/>
     <!-- Dubbo注册中心地址 -->
     <!--注册中心-->
-    <dubbo:registry address="zookeeper://192.168.1.103:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"
+                    file="${dubbo.cache.dir}/dubbo-user.cache"/>
+
     <!-- Dubbo协议配置，默认使用dubbo，端口20880  -->
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20880"
+                    threadpool="cached"
+                    threads="${dubbo.service.provider.threads:200}"
+                    accesslog="${dubbo.protocol.accesslog}"/>
     <!-- 使用Dubbo发布暴露的服务接口 -->
     <dubbo:service interface="com.vivo.dubbo.user.IUserService" ref="userService" protocol="dubbo"/>
     <!-- Dubbo发布暴露的服务接口实现 -->
-    <bean id="userService" class="com.vivo.dubbo.user.UserServiceImpl"/>
+    <bean id="userService" class="com.vivo.dubbo.user.service.UserServiceImpl"/>
+
+    <!--服务发布的配置，需要暴露的服务接口-->
+    <dubbo:service interface="com.vivo.dubbo.user.UserQueryFacade" ref="userQueryFacade" timeout="3000" version="1.0.0"/>
+    <!-- Dubbo发布暴露的服务接口实现 -->
+    <bean id="userQueryFacade" class="com.vivo.dubbo.user.service.UserQueryFacadeImpl"/>
+
+
 </beans>

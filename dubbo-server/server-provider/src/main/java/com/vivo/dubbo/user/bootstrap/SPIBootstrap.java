@@ -16,8 +16,8 @@ public class SPIBootstrap {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 new String[] {"META-INF/spring/provider.xml"});
         context.start();
-        //Protocol protocol = ExtensionLoader.getExtensionLoader(Protocol.class).getExtension("myProtocol");
-        //System.out.println(protocol.getDefaultPort());
+        Protocol protocol = ExtensionLoader.getExtensionLoader(Protocol.class).getExtension("myProtocol");
+        System.out.println(protocol.getDefaultPort());
         // press any key to exit
         Protocol protocol2 = ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension();
 

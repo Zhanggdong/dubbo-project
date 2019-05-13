@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/dubbo-server.iml" filepath="$PROJECT_DIR$/dubbo-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/server-facade/server-api.iml" filepath="$PROJECT_DIR$/server-facade/server-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/server-facade/server-facade.iml" filepath="$PROJECT_DIR$/server-facade/server-facade.iml" />
       <module fileurl="file://$PROJECT_DIR$/server-provider/server-provider.iml" filepath="$PROJECT_DIR$/server-provider/server-provider.iml" />
     </modules>
